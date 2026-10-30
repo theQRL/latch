@@ -1,0 +1,15 @@
+[build]
+  base = "."
+  command = "npm ci && npm test && npm run build:pwa"
+  publish = "apps/pwa/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[build.processing.html]
+  pretty_urls = false
+
+# All app views live at /. Do not add a /* -> /index.html rewrite:
+# missing worker, manifest and asset requests must remain real 404s.
+# HTTP headers are maintained in shared/assets/_headers and copied by Vite.
+# Do not enable snippet injection, analytics scripts or asset transformations.

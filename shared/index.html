@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="qrl-dawn" class="scheme-only-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0a1720" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; worker-src 'self'; manifest-src 'self'; connect-src 'self'; media-src blob:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="description" content="QRL Latch. An offline signing vault." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="QRL Latch" />
+    <meta name="application-name" content="QRL Latch" />
+    <title>QRL | Latch</title>
+    <link rel="icon" type="image/png" href="/icon-192.png" />
+  </head>
+  <body>
+    <div id="app">
+      <main
+        style="
+          max-width: 34rem;
+          margin: 4rem auto;
+          padding: 1.5rem;
+          font-family: system-ui;
+          color: #e6eef5;
+          background: #0a1720;
+        "
+        role="status"
+      >
+        <h1>Opening QRL | Latch</h1>
+        <p>If this screen remains, the app files could not load.</p>
+        <p>
+          Close and reopen Latch. If this device already holds keys, keep it
+          offline and do not clear app data. Use your encrypted backup on a
+          fresh installation if recovery is needed.
+        </p>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

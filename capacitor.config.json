@@ -1,0 +1,17 @@
+{
+  "appId": "org.theqrl.latch",
+  "appName": "QRL Latch",
+  "webDir": "build/native",
+  "ios": {
+    "path": "apps/ios",
+    "contentInset": "automatic"
+  },
+  "android": {
+    "path": "apps/android",
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  },
+  "loggingBehavior": "none"
+}
