@@ -330,7 +330,7 @@ const frames = await encodeMessage(unsignedMessage, 'CA36F456F5DFE2E2')
 
 ### 7.2 Animation (when `t > 1`)
 
-- Loop the frames continuously and provide slower/faster playback. Latch uses 550 ms per frame, with 900 ms and 300 ms alternatives; the online wallet uses 4 fps with 2 fps and 8 fps alternatives.
+- Loop the frames continuously and provide slower/faster playback. Latch and the online wallet both use 550 ms per frame by default, with 900 ms (Slow) and 300 ms (Fast) alternatives.
 - Provide pause, previous and next, and show "frame X of T".
 - With a valid ACK (section 9), skip frames the receiver already has.
 
@@ -656,7 +656,7 @@ Device wrappers are local and never included in wallet or whole-vault migration.
 
 Changing an existing wallet's network is discouraged and requires an explicit warning and acknowledgment. It replaces that wallet's allowed chain ID, not its keys or address, and does not move funds. Chain ID binding prevents replay between different chain IDs; it does not authenticate a network or prevent replay on networks that reuse the same chain ID. The signer cannot check network identity offline. Users must verify the intended chain ID independently and review it for each transaction.
 
-Latch uses a camera-friendly default of 550 ms per frame, with 900 ms and 300 ms alternatives. The online wallet uses 4 fps, with 2 fps and 8 fps alternatives. During QR display or camera scanning, Latch requests a foreground screen wake lock. Native iOS and Android use their platform screen-on controls; the PWA uses the browser Screen Wake Lock API where available. Locks are released when the transfer view closes or the app goes into the background. If the platform denies or revokes the request, the app shows a manual-interaction fallback. Screen wake locks do not extend the vault's configured inactivity timeout or bypass background/reconnection locking.
+Latch and the online wallet use the same default of 550 ms per frame, with 900 ms (Slow) and 300 ms (Fast) alternatives. During QR display or camera scanning, Latch requests a foreground screen wake lock. Native iOS and Android use their platform screen-on controls; the PWA uses the browser Screen Wake Lock API where available. Locks are released when the transfer view closes or the app goes into the background. If the platform denies or revokes the request, the app shows a manual-interaction fallback. Screen wake locks do not extend the vault's configured inactivity timeout or bypass background/reconnection locking.
 
 The public-address QR contains only the plain `Q`-prefixed 128-character hex body. Online wallets may scan it to add an address-only wallet, subject to the address length and checksum validation in section 5.3. They must show the address for confirmation and must not treat a seed, wallet backup or transaction QR as a public address.
 
